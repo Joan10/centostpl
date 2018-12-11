@@ -1,0 +1,4 @@
+- name: YUM update
+  command: yum -y update
+  tags:
+    - yumupdate
