@@ -1,0 +1,2 @@
+# centostpl
+Plantilla Centos
