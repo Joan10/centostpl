@@ -1,0 +1,4 @@
+---
+- file:
+    path: /MANAGED_BY_ANSIBLE
+    state: touch

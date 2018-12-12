@@ -1,28 +1,7 @@
-- name: YUM update
-  command: yum -y update
-  tags:
-    - yumupdate
-
-- name: Check if EPEL repo is already configured.
-  stat: path={{ epel_repofile_path }}
-  register: epel_repofile_result
-  tags:
-    - epel
- 
-- name: Install EPEL repo.
-  yum:
-    name: "{{ epel_repo_url }}"
-    state: present
-  register: result
-  when: not epel_repofile_result.stat.exists
-  tags:
-    - epel
- 
-- name: Import EPEL GPG key.
-  rpm_key:
-    key: "{{ epel_repo_gpg_key_url }}"
-    state: present
-  when: not epel_repofile_result.stat.exists
-  tags:
-    - epel
-
+- name: Execute specific setup for each distribution
+  include: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}-setup.yml"
+    - "{{ ansible_distribution }}-setup.yml"
+    - "default-setup.yml"
+  tags: setup
