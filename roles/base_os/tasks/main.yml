@@ -1,5 +1,5 @@
 ---
-- debug: msg= "host is {{ item }}"
+- debug: msg="host is {{ item }}"
   with_items:  "{{ groups['all'] }}" 
 
 - name: Execute specific setup for each distribution
