@@ -26,3 +26,24 @@
   tags:
     - epel
 
+- hostname:
+  name: "{{ hostname }}"
+
+- name: update hosts
+  template: src=hosts-tpl.j2 dest=/etc/hosts backup=yes owner=root group=root mode=0644
+  tags: hosts
+
+- name: be sure ntp is installed
+  yum: name=ntp state=installed
+  tags: ntp
+
+- name: be sure ntp is configured
+  template: src=ntp.conf.j2 dest=/etc/ntp.conf
+  notify:
+    - restart ntpd
+  tags: ntp
+
+- name: be sure ntpd is running and enabled
+  service: name=ntpd state=started enabled=yes
+  tags: ntp
+

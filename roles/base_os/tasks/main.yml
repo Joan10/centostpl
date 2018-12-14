@@ -1,3 +1,4 @@
+---
 - name: Execute specific setup for each distribution
   include: "{{ item }}"
   with_first_found:
