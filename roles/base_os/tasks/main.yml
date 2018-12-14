@@ -1,6 +1,6 @@
 ---
-- debug: msg="host is {{ item }}"
-  with_items:  "{{ groups['local_vm'] }}" 
+- debug: msg= "host is {{ item }}"
+  with_items:  "{{ groups['all'] }}" 
 
 - name: Execute specific setup for each distribution
   include: "{{ item }}"
