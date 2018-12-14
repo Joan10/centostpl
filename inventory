@@ -1,9 +1,0 @@
-[mysql]
-10.80.87.43
-
-[generic]
-10.80.87.42
-
-[production:children]
-mysql
-generic
