@@ -30,7 +30,7 @@
     name: "{{ hostname }}"
 
 - name: update hosts
-  template: src=hosts-tpl.j2 dest=/etc/hosts backup=yes owner=root group=root mode=0644
+  template: src=hosts.j2 dest=/etc/hosts backup=yes owner=root group=root mode=0644
   tags: hosts
 
 - name: be sure ntp is installed
