@@ -1,4 +1,5 @@
 ---
+# How to iterate between hosts in inventory
 - debug: msg="host is {{ item }}"
   with_items:  "{{ groups['all'] }}" 
 
