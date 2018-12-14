@@ -1,4 +1,8 @@
 ---
+- name: Debug
+  debug:
+    msg: "System {{ inventory_hostname }} has ipv4 {{ host_ip4 }}"
+
 # How to iterate between hosts in inventory
 - debug: msg="host is {{ item }}"
   with_items:  "{{ groups['all'] }}" 
