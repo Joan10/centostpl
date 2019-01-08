@@ -4,8 +4,8 @@
     dns4:
       - "{{ eth0_dnsserver }}"
     state: present
-    tags:
-      - network
+  tags:
+    - network
 
 - name: Restart network service
   service: name=NetworkManager state=restarted
