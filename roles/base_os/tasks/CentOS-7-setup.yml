@@ -2,7 +2,7 @@
     conn_name: eth0
     type: ethernet
     dns4:
-      - {{ eth0_dnsserver }}
+      - "{{ eth0_dnsserver }}"
     state: present
     tags:
       - network
