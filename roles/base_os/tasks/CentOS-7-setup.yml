@@ -1,7 +1,14 @@
+- nmcli:
+    conn_name: eth0
+    type: ethernet
+    dns4:
+      - 10.90.201.100
+    state: present
+
 - name: YUM update
   command: yum -y update
   tags:
-    - yumupdate
+    - pkgupdate
 
 - name: Check if EPEL repo is already configured.
   stat: path={{ epel_repofile_path }}
