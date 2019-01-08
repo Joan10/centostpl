@@ -2,7 +2,7 @@
     conn_name: eth0
     type: ethernet
     dns4:
-      - 10.90.201.100
+      - {{ eth0_dnsserver }}
     state: present
     tags:
       - network
