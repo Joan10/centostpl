@@ -4,6 +4,13 @@
     dns4:
       - 10.90.201.100
     state: present
+    tags:
+      - network
+
+- name: Restart network service
+  service: name=NetworkManager state=restarted
+  tags:
+    - network
 
 - name: YUM update
   command: yum -y update

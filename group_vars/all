@@ -5,5 +5,4 @@ epel_repofile_path: "/etc/yum.repos.d/epel.repo"
 ntpserver: "0.us.pool.ntp.org"
 
 hostname: "{{ ansible_distribution }}"
-hostname_fqdn: "{{ ansible_distribution }}.sint.uib.es"
-host_ip4: "192.168.1.20"
+hostname_fqdn: "{{ hostname }}.sint.uib.es"
